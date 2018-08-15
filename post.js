@@ -1,21 +1,16 @@
 "use strict";
-
 const post = {
-    bindings: {
-        post: "&"
-    },
-    template: `
-    <li >
-        <h2>h2 from post</h2>
-        <p>p from post</p>
-    </li>
-    `,
-    controller: function() {
-        const vm = this;
-
-    }
+  bindings: {
+    thought: "<",
+    deleteThought: "&",
+    index: "<"
+  },
+  template: `<h2> {{ $ctrl.thought.title }}</h2>
+  <i class="fas fa-times" ng-click="$ctrl.deleteThought({index: $ctrl.index})"></i>
+  <p>{{ $ctrl.thought.thought }}</p>
+  <button ng-click="$ctrl.deleteThought({ index: $ctrl.index });">Delete</button>`
 };
 
-
-angular.module("thoughts")
-    .component("post", post)
+angular
+  .module("App")
+  .component("post", post);

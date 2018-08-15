@@ -1,39 +1,25 @@
 "use strict";
-
 const postForm = {
-    template: `
-    <form>
-        <label>Title
-            <input ng-model="forminput">
-        </label>
-        <label>Thought
-            <textarea ng-model="formtextarea"></textarea>
-        </label>
-        <button type="button" id="addPost" ng-click="$ctrl.onSubmit(forminput, formtextarea)">Add Post</button>
-    </form>
-    
-    `,
     bindings: {
-        
+    addThought: "&"
     },
-    controller: function(){
-        const vm = this;
-        vm.thoughts = [{
-            title: "Today's thought.",
-            thought: "I want to be able to eat ice cream, but dairy in the US is sickening."
-        },{
-            title: "Good morning",
-            thought: "If it weren't for Donald Trump, I wouldn't be mad every time someone says 'president'."
-        }];
-        vm.onSubmit = function (forminput, formtextarea) {
-            vm.thoughts.push({title: forminput, thought: formtextarea});
-            console.log(vm.thoughts);
+  template: `
+
+  <form ng-submit="$ctrl.addThought({ newThought: $ctrl.newPost });">
+    <label>Title:
+        <input type="text" ng-model="$ctrl.newPost.title"> 
+    </label>
+    <label>Thought:
+        <textarea ng-model="$ctrl.newPost.thought"></textarea>
+    </label>
+    
+    <button>Add Post</button> 
+  </form>
 
 
-        }
-    }
-
+  `
 };
 
-angular.module("thoughts")
-    .component("postForm", postForm)
+angular
+  .module("App")
+  .component("postForm", postForm);
