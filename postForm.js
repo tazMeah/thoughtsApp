@@ -7,7 +7,7 @@ const postForm = {
 
   <form ng-submit="$ctrl.addThought({ newThought: $ctrl.newPost });">
     <label>Title:
-        <input type="text" ng-model="$ctrl.newPost.title"> 
+        <input type="text" ng-model="$ctrl.newPost.title" placeholder="Post title"> 
     </label>
     <label>Thought:
         <textarea ng-model="$ctrl.newPost.thought"></textarea>

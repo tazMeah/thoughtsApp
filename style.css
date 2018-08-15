@@ -9,3 +9,86 @@ post-form {
 .nowShowing {
     display: initial;
 }
+
+body {
+    font-family: "Dosis", sans-serif;
+    background: #f3f1f7;
+}
+
+h1 {
+    font-family: "Homemade Apple", cursive;
+    font-size: 42px;
+    text-align: center;
+    color: rgb(3, 169, 244);
+}
+
+social-posts {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+post {
+    border-bottom: 1px solid silver;
+    padding: 10px 20px;
+}
+
+social-posts button {
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Dosis";
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background:rgb(3, 169, 244);
+    padding: 20px 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+form input {
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+form  ::placeholder {
+    padding-left: 10px;
+}
+
+textarea {
+    height: 300px;
+    width: 100%;
+    resize: unset;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form button {
+    width: 102%;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+form button:hover {
+    color: white;
+    background: rgb(14, 180, 255)
+}
+
+label {
+    font-size: 22px;
+}
