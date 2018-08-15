@@ -26,7 +26,8 @@ const postForm = {
             thought: "If it weren't for Donald Trump, I wouldn't be mad every time someone says 'president'."
         }];
         vm.onSubmit = function (forminput, formtextarea) {
-            console.log(`onSubmitting here. the ${forminput} and here is the ${formtextarea}`);
+            vm.thoughts.push({title: forminput, thought: formtextarea});
+            console.log(vm.thoughts);
 
 
         }
